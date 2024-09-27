@@ -4,14 +4,14 @@ import styles from './style.module.css'
 function GeoData({state}: {state: State}) {
     const {geoData} = state
     const {ip , location, isp } = geoData
-    const {region,city, country, postalCode,timezone} = location
+    const {region, country, postalCode,timezone} = location
 
   return (
     <div className={styles.geoDataContainer}>
         <div className={styles.geoData} >
           <GeoDataField label='IP ADDRESS' value={ip} />
          <Divider />
-         <GeoDataField label='LOCATION' value={`${city}, ${region}, ${country}  ${postalCode} `} />
+         <GeoDataField label='LOCATION' value={`${region}, ${country}  ${postalCode} `} />
          <Divider />
          <GeoDataField label='TIMEZONE' value={`UTC ${timezone}`} />
             <Divider />

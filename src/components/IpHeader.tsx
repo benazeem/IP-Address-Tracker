@@ -40,12 +40,11 @@ function IpHeader({state, dispatch}:PropType) {
    useEffect(() => {
      getIpData(ip)
     .then(response => { 
-      if(response.status === 'fail') 
-    throw new Error("Invalid IP address");
       dispatch({type: 'FETCHED', payload: response})
     })
     .catch(error => {
       dispatch({type: 'ERROR', payload: error}) 
+      console.log(error)
     } )
     }, [ip, dispatch, getIpData]) 
 
