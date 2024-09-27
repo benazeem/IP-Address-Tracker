@@ -15,8 +15,8 @@ const customIcon = new L.DivIcon({
 
 function Map({state}: {state: State}) {
 
-  const lat:number = state.geoData.lat || 51.505;
-  const lon: number = state.geoData.lon || -0.09;
+  const lat:number = state.geoData.location.lat || 51.505;
+  const lon: number = state.geoData.location.lng || -0.09;
 
   function ChangeView({ center }: { center: [number, number] }) {
     const map = useMap();

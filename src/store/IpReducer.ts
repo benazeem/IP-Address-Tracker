@@ -1,19 +1,25 @@
 interface GeoData {
-    status: string;
-    country: string;
-    countryCode: string;
-    region: string;
-    regionName: string;
-    city: string;
-    zip: string;
-    lat: number;
-    lon: number;
-    timezone: string;
+    ip: string;
+    location: {
+        country: string;
+        region: string;
+        city: string;
+        lat: number;
+        lng: number;
+        postalCode: string;
+        timezone: string;
+        geonameId: number;
+    };
+    domains: string[];
+    as: {
+        asn: number;
+        name: string;
+        route: string;
+        domain: string;
+        type: string;
+    };
     isp: string;
-    org: string;
-    as: string;
-    query: string;
-  }
+}
   
   export interface State {
     ip: string;
@@ -22,26 +28,32 @@ interface GeoData {
   }
 
 
-  export const initialState ={
-    ip: '8.8.8.8',
+export const initialState: State = {
+    ip: 'google.com',
     geoData: {
-      "status": "success",
-      "country": "United States",
-      "countryCode": "US",
-      "region": "VA",
-      "regionName": "Virginia",
-      "city": "Ashburn",
-      "zip": "20149",
-      "lat": 39.03,
-      "lon": -77.5,
-      "timezone": "America/New_York",
-      "isp": "Google LLC",
-      "org": "Google Public DNS",
-      "as": "AS15169 Google LLC",
-      "query": "8.8.8.8"
+        ip: "142.250.72.142",
+        location: {
+            country: "US",
+            region: "California",
+            city: "The Greenhouse",
+            lat: 37.41889,
+            lng: -122.10361,
+            postalCode: "",
+            timezone: "-07:00",
+            geonameId: 7150361
+        },
+        domains: [],
+        as: {
+            asn: 15169,
+            name: "GOOGLE",
+            route: "142.250.72.0/24",
+            domain: "https://about.google/intl/en/",
+            type: "Content"
+        },
+        isp: "Google LLC"
     },
     error: null,
-  }
+};
 
 interface IpSetAction {
     type: 'IPSET';

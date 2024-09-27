@@ -1,20 +1,19 @@
 import { State } from '../store/IpReducer'
-import useUTCTime from '../hooks/useUTCTime'
 import styles from './style.module.css'
 
 function GeoData({state}: {state: State}) {
     const {geoData} = state
-    const {query, regionName, countryCode, zip, isp, timezone } = geoData
-    const timeZone = useUTCTime(timezone);
+    const {ip , location, isp } = geoData
+    const {region,city, country, postalCode,timezone} = location
 
   return (
     <div className={styles.geoDataContainer}>
         <div className={styles.geoData} >
-          <GeoDataField label='IP ADDRESS' value={query} />
+          <GeoDataField label='IP ADDRESS' value={ip} />
          <Divider />
-         <GeoDataField label='LOCATION' value={`${regionName}, ${countryCode} - ${zip} `} />
+         <GeoDataField label='LOCATION' value={`${city}, ${region}, ${country}  ${postalCode} `} />
          <Divider />
-         <GeoDataField label='TIMEZONE' value={`UTC ${timeZone}`} />
+         <GeoDataField label='TIMEZONE' value={`UTC ${timezone}`} />
             <Divider />
             <GeoDataField label='ISP' value={isp} />
         </div>
