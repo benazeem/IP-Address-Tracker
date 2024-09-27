@@ -1,6 +1,6 @@
 .header {
     height: 35%;
-    background: url('/images/pattern-bg-desktop.png') no-repeat;
+    background: url('/images/pattern-bg-desktop.png') no-repeat ;
     color: white;
     text-align: center;
     padding: 10px;
@@ -12,6 +12,7 @@
 }
 
 .search {
+    position: relative;
     height: 2.75rem;
     width: 35%;
     display: flex;
@@ -33,7 +34,7 @@
 }
 
 .searchBtn {
-    width: 10%;
+    width: 40px;
     height: 100%;
     padding: 0.25rem;
     border-radius: 0 0.5rem 0.5rem 0;
@@ -43,6 +44,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.searchBtn:disabled, .searchBtn:hover {
+    background-color: rgb(48, 47, 47);
 }
 
 .map {
@@ -59,25 +64,83 @@
 }
 
 .geoDataContainer{
-   width: 80dvw;
-   padding: 0.25rem;
+   width: 75%;
+   padding: 0.75rem;
    background-color: #fff;
    color: black;
-   border-radius: 0.5rem;
-   
+   border-radius:1rem;
    position: absolute;
    z-index: 4;
-   top: 25%;
-   left: 10%;
+   top: 80%;
 }
 
 .geoDataField {
         padding: 0.25rem;
+        align-self: start;
+        text-align: left;
+        width: 23%;
+        font-weight: 700;
+        overflow: hidden;
+
+}
+
+.geoDataField p {
+    color: rgb(121, 124, 123);
+    font-size: 0.75rem;
+    line-height: 0.2rem;
+    
+}
+
+.geoDataField h2 {
+    font-size: 1.25rem;
+    line-break: auto;
+}
+
+.geoDataField:first-child  h2  {
+    line-break: anywhere;
 }
 
 .divider {
-    width: 0.1rem;
-    height: 5rem;
-    background-color: rgba(47, 46, 46, 0.785);
+    width: 0.5px;
+    height: 4rem;
+    background-color: rgba(47, 46, 46, 0.479);
     margin: 0.1rem 0;
 }
+
+.errorArea {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 0%;
+    background-color: rgba(255, 0, 0, 0.545);
+    line-height: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+
+
+        @media (max-width: 550px) {
+            .header {
+                background: url('/images/pattern-bg-mobile.png') no-repeat cover;
+                 /* Image for medium screens */
+            }
+            .geoData {
+                flex-direction: column;
+            }
+            .divider {
+                display: none;
+            }
+            .geoDataField {
+                align-self: center;
+                width: 95%;
+                text-align: center;
+                line-height: 0.5rem;
+            }
+            .geoDataContainer{
+                top: 70%;
+            }
+            .search{
+                width: 75%;
+            }
+
+        }
+        
