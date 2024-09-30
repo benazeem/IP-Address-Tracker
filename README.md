@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop](IP_Address_App.png)
+![Desktop](/IP_Address_App.png)
 
 ### Links
 
