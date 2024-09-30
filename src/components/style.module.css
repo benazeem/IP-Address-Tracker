@@ -121,7 +121,8 @@
         @media (max-width: 550px) {
             .header {
                 background: url('/images/pattern-bg-mobile.png') no-repeat cover;
-                 /* Image for medium screens */
+                
+                 line-height: 0.5rem;
             }
             .geoData {
                 flex-direction: column;
@@ -136,7 +137,7 @@
                 line-height: 0.5rem;
             }
             .geoDataContainer{
-                top: 70%;
+                top: 50%;
             }
             .search{
                 width: 75%;

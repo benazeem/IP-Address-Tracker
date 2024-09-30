@@ -26,7 +26,7 @@ function Map({state}: {state: State}) {
 
   return (
     <>
-    <MapContainer className={styles.map} center={[lat,lon]} zoom={15} scrollWheelZoom={false}  attributionControl={false}   >
+    <MapContainer className={styles.map} center={[lat ,lon]} zoom={15} scrollWheelZoom={false}  attributionControl={false}   >
   <TileLayer 
    url="http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
    subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
